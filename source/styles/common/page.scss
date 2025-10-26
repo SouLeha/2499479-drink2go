@@ -1,0 +1,23 @@
+.page {
+  font-family: $primary-font;
+  background-color: #ffffff;
+  color: #333333;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.page__body {
+  font-family: $primary-font;
+  width: 320px;
+  min-height: 100%;
+  margin: 0 auto;
+  padding: 0;
+
+  @media (min-width: $tablet-width) {
+    width: 768px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 1440px;
+  }
+}

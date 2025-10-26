@@ -1,0 +1,19 @@
+.main-nav_list {
+  @media (min-width: $tablet-width) {
+    display: flex;
+  }
+}
+
+.main-nav_list--closed {
+  @media (max-width: $mobile-width-only) {
+    display: none;
+  }
+}
+
+.main-nav__list-user {
+  display: flex;
+}
+
+.main-nav__link-user{
+  padding: 22px;
+}
