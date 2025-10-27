@@ -1,0 +1,113 @@
+.slider {
+  @media (min-width: $tablet-width) {
+    overflow-y: visible;
+  }
+
+  .slider__pagination {
+    bottom: 60px;
+  }
+}
+
+.slider__pagination {
+  display: none;
+
+  @media (min-width: $desktop-width) {
+    display: grid;
+    grid-template-columns: repeat(3, 62px);
+    gap: 8px;
+    justify-content: center;
+    bottom: 60px;
+  }
+}
+
+.slider__pagination > span {
+  width: 100%;
+  border-radius: 0;
+  height: 4px;
+  cursor: pointer;
+  background-color: #ffffff;
+  opacity: 1;
+
+  &:hover,
+  &:focus {
+    background-color: #7859cf;
+    opacity: 0.25;
+  }
+
+  &:active {
+    background-color: #7859cf;
+  }
+
+  &[aria-current="true"] {
+    background-color: #7859cf;
+  }
+}
+
+.slider__button {
+  height: 100%;
+  top: 0;
+  margin: 0;
+  width: 20px;
+
+  @media (min-width: $tablet-width) {
+    width: 80px;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 11px;
+    height: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #7859cf;
+    background-repeat: no-repeat;
+    background-position: center center;
+    mask-image: url("../../img/icons/stack.svg#arrow-slider");
+  }
+
+  &--prev {
+    left: 0;
+
+    @media (min-width: $desktop-width) {
+      left: calc((100% - $desktop-width) / 2);
+    }
+
+    &:hover,
+    &:focus {
+      background: linear-gradient(90deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+    }
+
+    &:active {
+      background: linear-gradient(90deg, rgba(120, 89, 207, 0.25) 0%, rgba(120, 89, 207, 0) 100%);
+    }
+  }
+
+  &--next {
+    right: 0;
+
+    @media (min-width: $desktop-width) {
+      right: calc((100% - $desktop-width) / 2);
+    }
+
+    &::after {
+      transform: rotate(180deg);
+    }
+
+    &:hover,
+    &:focus {
+      background: linear-gradient(270deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+    }
+
+    &:active {
+      background: linear-gradient(270deg, rgba(120, 89, 207, 0.25) 0%, rgba(120, 89, 207, 0) 100%);
+    }
+  }
+
+  &:disabled {
+    &::after {
+      background-color: #bdbdbd;
+    }
+  }
+}
