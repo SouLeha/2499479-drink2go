@@ -12,8 +12,77 @@
 
 .main-nav__list-user {
   display: flex;
+  list-style: none;
 }
 
-.main-nav__link-user{
-  padding: 22px;
+.main-nav__link {
+  border: none;
+  position: relative;
+  cursor: pointer;
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  letter-spacing: inherit;
+}
+
+.main-nav__link-user {
+  padding: 30px;
+
+  &::before {
+    content: "";
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #333333;
+    background-repeat: no-repeat;
+    background-position: center center;
+    mask-image: url("../../icons/stack.svg#user");
+  }
+}
+
+.main-nav__link-basket {
+  padding: 30px;
+
+  &::before {
+    content: "";
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #333333;
+    background-repeat: no-repeat;
+    background-position: center center;
+    mask-image: url("../../icons/basket.svg");
+  }
+}
+
+.main-nav__toggle--closed {
+  padding: 30px;
+  border: none;
+  position: relative;
+  cursor: pointer;
+  display: block;
+  text-decoration: none;
+  background-color: #ffffff;
+  color: inherit;
+  letter-spacing: inherit;
+
+  &::before {
+    content: "";
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #444444;
+    background-repeat: no-repeat;
+    background-position: center center;
+    mask-image: url("../../icons/burger.svg");
+  }
 }
