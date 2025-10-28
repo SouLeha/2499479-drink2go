@@ -67,7 +67,7 @@
           <li class="main-nav__item">
             <a class="main-nav__link main-nav__link-basket" href="#"><span class="visually-hidden">Корзина</span></a>
           </li>
-          <button class="main-nav__toggle main-nav__toggle--closed" type="button">
+          <button class="main-nav__toggle main-nav__toggle--closed js-toggle-button" type="button">
             <span class="visually-hidden">Открыть меню</span>
           </button>
         </ul>
@@ -76,7 +76,7 @@
   </header>
   <main class="main">
     <section class="promo">
-      <div class="promo__container">
+      <div class="promo__container" data-test="hero">
         <h1 class="visually-hidden">Интернет-магазин кофейных напитков Drink 2 go</h1>
         <h2 class="visually-hidden">Попробуйте наши новинки!</h2>
         <div class="promo__slider slider swiper">
@@ -203,7 +203,7 @@
       </div>
     </section>
     <section class="advantages">
-      <div class="advantages__container">
+      <div class="advantages__container" data-test="features">
         <h2 class="advantages__badge badge">Преимущества</h2>
         <h3 class="advantages__title">Главные причины выбрать Drink2Go</h3>
         <ul class="advantages__list">
@@ -227,7 +227,7 @@
       </div>
     </section>
      <section class="catalog">
-      <div class="catalog__wrapper wrapper">
+      <div class="catalog__wrapper wrapper" data-test="catalog">
         <div class="catalog__top">
           <p class="catalog__badge">Каталог</p>
           <h2 class="catalog__title">Каталог кофейных напитков</h2>
@@ -456,7 +456,7 @@
       </div>
     </section>
     <section class="map">
-      <div class="map__container">
+      <div class="map__container" data-test="map">
         <h2 class="visually-hidden">Мы на карте</h2>
         <picture>
           <source type="image/webp" media="(min-width: 1440px)"
@@ -476,7 +476,7 @@
     </section>
   </main>
   <footer class="footer">
-    <div class="footer__container">
+    <div class="footer__container" data-test="footer">
       <h2 class="visually-hidden">Контактная информация и ссылки</h2>
       <div class="footer__header">
         <a class="footer__logo logo logo--footer" href="#" aria-label="Главная страница">
