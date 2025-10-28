@@ -1,10 +1,47 @@
-.main-nav_list {
+.main-nav {
   @media (min-width: $tablet-width) {
-    display: flex;
+    font-family: "Montserrat", "Arial", sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    
   }
 }
 
-.main-nav_list--closed {
+.main-nav__wrapper {
+  @media (min-width: $tablet-width) {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.main-nav__list {
+
+  @media (min-width: $tablet-width) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    font-family: "Montserrat", "Arial", sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+
+    text-transform: uppercase;
+    letter-spacing: .1em;
+
+    margin: 0;
+    padding: 0;
+    margin-right: 60px;
+  }
+}
+
+.main-nav__list--closed {
   @media (max-width: $mobile-width-only) {
     display: none;
   }
@@ -22,12 +59,25 @@
   cursor: pointer;
   display: block;
   text-decoration: none;
-  color: inherit;
+  color: #333333;
   letter-spacing: inherit;
+  padding: 32px 20px;
+}
+
+.main-nav__link--current {
+  @media (min-width: $tablet-width) {
+    color: #7859cf;
+    border-bottom: 2px solid #7859cf;
+    padding-bottom: 30px;
+  }
 }
 
 .main-nav__link-user {
   padding: 30px;
+
+  @media (min-width: $tablet-width) {
+    padding: 32px 22px;
+  }
 
   &::before {
     content: "";
@@ -46,6 +96,10 @@
 
 .main-nav__link-basket {
   padding: 30px;
+
+  @media (min-width: $tablet-width) {
+    padding: 32px 22px;
+  }
 
   &::before {
     content: "";
@@ -73,6 +127,10 @@
   background-color: #ffffff;
   color: inherit;
   letter-spacing: inherit;
+
+  @media (min-width: $tablet-width) {
+    display: none;
+  }
 
   &::before {
     content: "";

@@ -9,7 +9,9 @@
 }
 
 .main-header__logo-text {
-  @media (max-width: $mobile-width-only) {
-    display: none;
+  display: none;
+
+  @media (min-width: $desktop-width) {
+    display: block;
   }
 }
