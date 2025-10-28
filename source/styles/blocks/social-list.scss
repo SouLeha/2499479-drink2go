@@ -1,0 +1,60 @@
+.social-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  gap: 20px;
+}
+
+.social-list__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 40px;
+  min-height: 40px;
+  border-radius: 4px;
+
+  &::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: #bdbdbd;
+  }
+
+  &--vkontakte {
+    &::before {
+      mask-image: url("../../icons/vkontakte.svg");
+    }
+  }
+
+  &--pinterest {
+    &::before {
+      mask-image: url("../../icons/pinterest.svg");
+    }
+  }
+
+  &--odnoklassniki {
+    &::before {
+      mask-image: url("../../icons/odnoklassniki.svg");
+    }
+  }
+
+  &:hover,
+  &:focus {
+    background-color: #f0ebff;
+
+    &::before {
+      background-color: #7859cf;
+    }
+  }
+
+  &:active {
+    background-color: rgb(120, 89, 207, 0.75);
+
+    &::before {
+      background-color: #7859cf;
+    }
+  }
+}

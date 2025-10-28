@@ -1,0 +1,18 @@
+.map__container {
+  background-color: #edf0ec;
+}
+
+.map__image {
+  display: block;
+  margin: 0 auto;
+  height: auto;
+
+  @media (min-width: $tablet-width) {
+    width: 768px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 1440px;
+  }
+
+}
