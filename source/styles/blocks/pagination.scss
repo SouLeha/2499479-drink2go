@@ -33,15 +33,19 @@
   padding: 8px;
 
   &--next {
+    width: 10px;
+    height: 6px;
+    padding: 15px;
     box-sizing: border-box;
     background: center center no-repeat url("../../icons/arrow.svg") #ffffff;
-    transform: rotate(-90deg);
+    transform: rotate(-180deg);
+    background-size: 10px 10px;
   }
 
   &--back {
     box-sizing: border-box;
     background: center center no-repeat url("../../icons/arrow.svg") #ffffff;
-    transform: rotate(90deg);
+    background-size: 10px 10px;
   }
 
   &--сurrent {
