@@ -1,12 +1,12 @@
 .main-nav {
   @media (min-width: $tablet-width) {
-    font-family: "Montserrat", "Arial", sans-serif;
+    font-family: $primary-font;
     font-weight: 500;
     font-size: 12px;
     line-height: 16px;
     text-align: center;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.02em;
   }
 }
 
@@ -25,14 +25,11 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    font-family: "Montserrat", "Arial", sans-serif;
+    font-family: $primary-font;
     font-weight: 500;
     font-size: 12px;
     line-height: 16px;
-
     text-transform: uppercase;
-    letter-spacing: 0.1em;
-
     margin: 0;
     padding: 0;
     margin-right: 162px;
@@ -51,28 +48,15 @@
   }
 }
 
-.main-nav__item {
-  @media (min-width: $desktop-width) {
-    // margin-right: 20px;
-  }
-}
-
 .main-nav__list-user {
   display: flex;
   list-style: none;
   margin: 0;
-  margin-right: 20px;
-}
-
-.main-nav__item .main-nav__link-user,
-.main-nav__item .main-nav__link-basket {
-
-  padding: 32px 20px;
+  margin-right: 0;
 }
 
 .main-nav__link {
   border: none;
-  position: relative;
   cursor: pointer;
   display: block;
   text-decoration: none;
@@ -83,10 +67,9 @@
 
 .main-nav__link span {
   display: none;
+
   @media (min-width: $desktop-width) {
     display: block;
-    margin-left: 24px;
-
   }
 }
 
@@ -98,52 +81,48 @@
   }
 }
 
-.main-nav__link-user {
-  padding: 30px;
+.main-nav__link-user,
+.main-nav__link-basket {
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 22px;
 
-
-
-  @media (min-width: $tablet-width) {
-    padding: 32px 22px;
+  @media (min-width: $desktop-width) {
+    padding: 32px 20px;
   }
 
   &::before {
     content: "";
     width: 16px;
     height: 16px;
-    position: absolute;
-    top: 50%;
-    left: 26%;
-    transform: translate(-50%, -50%);
     background: #333333;
     background-repeat: no-repeat;
     background-position: center center;
-    mask-image: url("../../icons/stack.svg#user");
+    flex-shrink: 0;
+
+    @media (min-width: $desktop-width) {
+      margin-right: 8px;
+    }
   }
 }
 
-.main-nav__link-basket {
-  padding: 30px;
-
-  @media (min-width: $tablet-width) {
-    padding: 32px 22px;
+.main-nav__link-user {
+  @media (min-width: $desktop-width) {
+    margin-right: 20px;
 
   }
+}
 
-  &::before {
-    content: "";
-    width: 16px;
-    height: 16px;
-    position: absolute;
-    top: 50%;
-    left: 16%;
-    transform: translate(-50%, -50%);
-    background: #333333;
-    background-repeat: no-repeat;
-    background-position: center center;
-    mask-image: url("../../icons/basket.svg");
-  }
+.main-nav__link-user::before {
+  mask-image: url("../../icons/user.svg");
+  -webkit-mask-image: url("../../icons/user.svg");
+}
+
+.main-nav__link-basket::before {
+  mask-image: url("../../icons/basket.svg");
+  -webkit-mask-image: url("../../icons/basket.svg");
 }
 
 .main-nav__toggle {
@@ -175,21 +154,16 @@
     background-position: center center;
   }
 
-  &--closed {
-    &::before {
-      mask-image: url("../../icons/burger.svg");
-    }
-  }
-   &--opened {
-    &::before {
-      mask-image: url("../../icons/cross-close.svg");
-    }
+  &--closed::before {
+    mask-image: url("../../icons/burger.svg");
   }
 
-  &--closed,
-  &--opened {
-    &:active {
-      background-color: #f0ebff;
-    }
+  &--opened::before {
+    mask-image: url("../../icons/cross-close.svg");
+  }
+
+  &--closed:active,
+  &--opened:active {
+    background-color: #f0ebff;
   }
 }

@@ -1,4 +1,5 @@
 .slider {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.01);
   @media (min-width: $tablet-width) {
     overflow-y: visible;
   }
@@ -64,7 +65,7 @@
     background-color: #7859cf;
     background-repeat: no-repeat;
     background-position: center center;
-    mask-image: url("../../icons/stack.svg#arrow-slider");
+    mask-image: url("../../icons/arrow-slider.svg");
   }
 
   &--prev {

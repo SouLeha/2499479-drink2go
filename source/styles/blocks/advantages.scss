@@ -3,11 +3,11 @@
   margin: 0 auto;
   width: calc(100% - 40px);
 
-  @media(min-width: $tablet-width) {
+  @media (min-width: $tablet-width) {
     width: calc(100% - 40px);
   }
 
-  @media(min-width: $desktop-width) {
+  @media (min-width: $desktop-width) {
     width: calc(100% - 80px);
   }
 
@@ -16,16 +16,17 @@
   flex-direction: column;
   align-items: center;
 
-  @media(min-width: $tablet-width) {
+  @media (min-width: $tablet-width) {
     padding: 60px 10px 100px;
   }
 
-  @media(min-width: $desktop-width) {
+  @media (min-width: $desktop-width) {
     padding: 100px 0 120px;
   }
 }
 
 .advantages__badge {
+  margin: 0;
   margin-bottom: 4px;
 }
 
@@ -37,13 +38,13 @@
   line-height: 36px;
   text-align: center;
 
-  @media(min-width: $tablet-width) {
+  @media (min-width: $tablet-width) {
     font-size: 42px;
     line-height: 64px;
     margin-bottom: 60px;
   }
 
-  @media(min-width: $desktop-width) {
+  @media (min-width: $desktop-width) {
     margin-bottom: 80px;
   }
 }
@@ -56,12 +57,12 @@
   display: grid;
   row-gap: 32px;
 
-  @media(min-width: $tablet-width) {
+  @media (min-width: $tablet-width) {
     grid-template-columns: repeat(2, 1fr);
     gap: 50px 30px;
   }
 
-  @media(min-width: $desktop-width) {
+  @media (min-width: $desktop-width) {
     grid-template-columns: repeat(4, 1fr);
   }
 }
@@ -69,7 +70,7 @@
 .advantages__item {
   display: grid;
 
-  @media(min-width: $tablet-width) {
+  @media (min-width: $tablet-width) {
     grid-template-columns: 56px 1fr;
     column-gap: 20px;
     text-align: left;
@@ -90,7 +91,7 @@
     background-repeat: no-repeat;
     background-size: cover;
 
-    @media(min-width: $desktop-width)  {
+    @media (min-width: $desktop-width) {
       margin-bottom: 20px;
     }
   }
@@ -126,12 +127,12 @@
   font-size: 18px;
   line-height: 32px;
 
-  @media(min-width: $tablet-width) {
+  @media (min-width: $tablet-width) {
     font-size: 24px;
     line-height: 36px;
   }
 
-  @media(min-width: $desktop-width) {
+  @media (min-width: $desktop-width) {
     margin-bottom: 10px;
   }
 }
@@ -139,11 +140,11 @@
 .advantages__description {
   margin: 0;
 
-  @media(min-width: $tablet-width) {
+  @media (min-width: $tablet-width) {
     padding-right: 30px;
   }
 
-  @media(min-width: $desktop-width) {
+  @media (min-width: $desktop-width) {
     font-size: 16px;
     line-height: 24px;
   }

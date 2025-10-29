@@ -5,9 +5,9 @@
   <meta charset="UTF-8">
   <title>DRINK 2 GO</title>
   <link rel="icon" href="favicon.ico">
-    <link rel="icon" href="favicons/favicon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="favicons/favicon-apple.png">
-    <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="favicons/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="favicons/favicon-apple.png">
+  <link rel="manifest" href="manifest.webmanifest">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <link rel="preload" href="/source/fonts/montserrat-400.woff2" type="font/woff2" as="font" crossorigin="anonymous">
   <link rel="preload" href="/source/fonts/montserrat-500.woff2" type="font/woff2" as="font" crossorigin="anonymous">
@@ -22,7 +22,7 @@
 
 <body class="page__body">
   <header class="main-header">
-    <div class="main-header__navigation" data-test="header">
+    <div class="main-header__navigation header__navigation" data-test="header">
       <div class="main-header__container">
         <a class="main-header__logo main-header__logo-link" href="index.html">
           <picture>
@@ -86,7 +86,7 @@
               <div class="slide__container">
                 <div class="slide__wrapper">
                   <h2 class="slide__badge badge">Новинка!</h2>
-                  <h3 class="slide__title">Декаф Флэт Уайт</h3>
+                  <h3 class="slide__title">Декаф флэт уайт</h3>
                   <p class="slide__description">
                     Свежесваренный кофе без кофеина из Эфиопии с натуральным фермерским молоком — то,
                     что нужно для расслабления после тяжёлого рабочего дня
@@ -214,7 +214,7 @@
           </li>
           <li class="advantages__item advantages__item--comfort">
             <h3 class="advantages__subtitle">Удобство</h3>
-            <p class="advantages__description">Легко помещается и в карман, и в маленькую сумочку</p>
+            <p class="advantages__description">Легко помещается и в карман, <br>и в маленькую сумочку</p>
           </li>
           <li class="advantages__item advantages__item--enegry">
             <h3 class="advantages__subtitle">Бодрость</h3>
@@ -222,12 +222,12 @@
           </li>
           <li class="advantages__item advantages__item--eco">
             <h3 class="advantages__subtitle">Экологичность</h3>
-            <p class="advantages__description">Вся упаковка сделана из перерабатываемых материалов</p>
+            <p class="advantages__description">Вся упаковка сделана <br>из перерабатываемых материалов</p>
           </li>
         </ul>
       </div>
     </section>
-     <section class="catalog">
+    <section class="catalog">
       <div class="catalog__wrapper wrapper" data-test="catalog">
         <div class="catalog__top">
           <p class="catalog__badge">Каталог</p>
@@ -248,12 +248,14 @@
                 <div class="filter__input-wrapper">
                   <label>
                     <span class="visually-hidden">Минимальная цена.</span>
-                    <input class="filter__input-price filter__input-price--left" name="min-price" type="number" placeholder="0" min="0" max="1000">
+                    <input class="filter__input-price filter__input-price--left" name="min-price" type="number"
+                      placeholder="0" min="0" max="1000">
                   </label>
                   <span class="filter__price-stroke"></span>
                   <label>
                     <span class="visually-hidden">Максимальная цена.</span>
-                    <input class="filter__input-price filter__input-price--right" name="max-price" type="number" placeholder="900" value="900" min="0" max="1000">
+                    <input class="filter__input-price filter__input-price--right" name="max-price" type="number"
+                      placeholder="900" value="900" min="0" max="1000">
                   </label>
                 </div>
               </div>
@@ -262,14 +264,16 @@
                 <ul class="filter__milk-list">
                   <li class="filter__milk-item">
                     <label>
-                      <input class="visually-hidden filter__input-milk" type="radio" name="milk-type" value="no_matter" checked>
+                      <input class="visually-hidden filter__input-milk" type="radio" name="milk-type" value="no_matter"
+                        checked>
                       <span class="filter__mark-circle"></span>
                       <span class="filter__milk-label">Неважно</span>
                     </label>
                   </li>
                   <li class="filter__milk-item">
                     <label>
-                      <input class="visually-hidden filter__input-milk" type="radio" name="milk-type" value="animal_milk">
+                      <input class="visually-hidden filter__input-milk" type="radio" name="milk-type"
+                        value="animal_milk">
                       <span class="filter__mark-circle"></span>
                       <span class="filter__milk-label">Только животное</span>
                     </label>
@@ -283,7 +287,8 @@
                   </li>
                   <li class="filter__milk-item">
                     <label>
-                      <input class="visually-hidden filter__input-milk" type="radio" name="milk-type" value="without_milk" disabled>
+                      <input class="visually-hidden filter__input-milk" type="radio" name="milk-type"
+                        value="without_milk" disabled>
                       <span class="filter__mark-circle"></span>
                       <span class="filter__milk-label">Без молока</span>
                     </label>
@@ -352,8 +357,10 @@
             <li class="cards__item">
               <a class="cards__link" href="#">
                 <picture>
-                  <source type="image/webp" srcset="">
-                  <img class="cards__image" src="" srcset="" width="130" height="188" alt="Декаф Флэт Уайт">
+                  <source type="image/webp"
+                    srcset="images/catalog/image-card1@1x.webp, images/catalog/image-card1@2x.webp 2x">
+                  <img class="cards__image" src="images/catalog/image-card1@1x.png"
+                    srcset="images/catalog/image-card1@2x.png 2x" width="130" height="188" alt="Декаф Флэт Уайт">
                 </picture>
                 <h3 class="cards__title">Декаф Флэт Уайт</h3>
                 <p class="cards__description">Кофе без кофеина из Эфиопии<br> с натуральным фермерским молоком</p>
@@ -366,8 +373,10 @@
             <li class="cards__item">
               <a class="cards__link" href="#">
                 <picture>
-                  <source type="image/webp" srcset="">
-                  <img class="cards__image" src="" srcset="" width="130" height="188" alt="Декаф Флэт Уайт">
+                  <source type="image/webp"
+                    srcset="images/catalog/image-card2@1x.webp, images/catalog/image-card2@2x.webp 2x">
+                  <img class="cards__image" src="images/catalog/image-card2@1x.png"
+                    srcset="images/catalog/image-card2@2x.png 2x" width="130" height="188" alt="Декаф Флэт Уайт">
                 </picture>
                 <h3 class="cards__title">Декаф Флэт Уайт</h3>
                 <p class="cards__description">Кофе без кофеина из Эфиопии<br> с натуральным фермерским молоком</p>
@@ -380,8 +389,10 @@
             <li class="cards__item">
               <a class="cards__link" href="#">
                 <picture>
-                  <source type="image/webp" srcset="">
-                  <img class="cards__image" src="" srcset="" width="130" height="188" alt="Декаф Флэт Уайт">
+                  <source type="image/webp"
+                    srcset="images/catalog/image-card3@1x.webp, images/catalog/image-card3@2x.webp 2x">
+                  <img class="cards__image" src="images/catalog/image-card3@1x.png"
+                    srcset="images/catalog/image-card3@2x.png 2x" width="130" height="188" alt="Декаф Флэт Уайт">
                 </picture>
                 <h3 class="cards__title">Декаф Флэт Уайт</h3>
                 <p class="cards__description">Кофе без кофеина из Эфиопии<br> с натуральным фермерским молоком</p>
@@ -394,8 +405,8 @@
             <li class="cards__item">
               <a class="cards__link" href="#">
                 <picture>
-                  <source type="image/webp" srcset="">
-                  <img class="cards__image" src="" srcset="" width="130" height="188" alt="Декаф Флэт Уайт">
+                  <source type="image/webp" srcset="images/catalog/image-card4@1x.webp, images/catalog/image-card4@2x.webp 2x">
+                  <img class="cards__image" src="images/catalog/image-card4@1x.png" srcset="images/catalog/image-card4@2x.png 2x" width="130" height="188" alt="Декаф Флэт Уайт">
                 </picture>
                 <h3 class="cards__title">Декаф Флэт Уайт</h3>
                 <p class="cards__description">Кофе без кофеина из Эфиопии<br> с натуральным фермерским молоком</p>
@@ -408,8 +419,8 @@
             <li class="cards__item">
               <a class="cards__link" href="#">
                 <picture>
-                  <source type="image/webp" srcset="">
-                  <img class="cards__image" src="" srcset="" width="130" height="188" alt="Декаф Флэт Уайт">
+                  <source type="image/webp" srcset="images/catalog/image-card5@1x.webp, images/catalog/image-card5@2x.webp 2x">
+                  <img class="cards__image" src="images/catalog/image-card5@1x.png" srcset="images/catalog/image-card5@2x.png 2x" width="130" height="188" alt="Декаф Флэт Уайт">
                 </picture>
                 <h3 class="cards__title">Декаф Флэт Уайт</h3>
                 <p class="cards__description">Кофе без кофеина из Эфиопии<br> с натуральным фермерским молоком</p>
@@ -422,8 +433,8 @@
             <li class="cards__item">
               <a class="cards__link" href="#">
                 <picture>
-                  <source type="image/webp" srcset="">
-                  <img class="cards__image" src="" srcset="" width="130" height="188" alt="Декаф Флэт Уайт">
+                  <source type="image/webp" srcset="images/catalog/image-card6@1x.webp, images/catalog/image-card6@2x.webp 2x">
+                  <img class="cards__image" src="images/catalog/image-card6@1x.png" srcset="images/catalog/image-card6@2x.png 2x" width="130" height="188" alt="Декаф Флэт Уайт">
                 </picture>
                 <h3 class="cards__title">Декаф Флэт Уайт</h3>
                 <p class="cards__description">Кофе без кофеина из Эфиопии<br> с натуральным фермерским молоком</p>
@@ -438,7 +449,8 @@
         <div class="catalog__pagination pagination">
           <ul class="pagination__list">
             <li class="pagination__item">
-              <button class="pagination__button pagination__button--back button" type="button"><span>Назад</span></button>
+              <button class="pagination__button pagination__button--back button"
+                type="button"><span>Назад</span></button>
             </li>
             <li class="pagination__item">
               <button class="pagination__button button" type="button">1</button>
@@ -450,7 +462,8 @@
               <button class="pagination__button button" type="button">3</button>
             </li>
             <li class="pagination__item">
-              <button class="pagination__button pagination__button--next button" type="button"><span>Вперёд</span></button>
+              <button class="pagination__button pagination__button--next button"
+                type="button"><span>Вперёд</span></button>
             </li>
           </ul>
         </div>
@@ -464,7 +477,8 @@
             srcset="images/index/map/map-desktop@1x.webp 1x, images/index/map/map-desktop@2x.webp 2x">
           <source type="image/webp" media="(min-width: 768px)"
             srcset="images/index/map/map-tablet@1x.webp 1x, images/index/map/map-tablet@2x.webp 2x">
-          <source type="image/webp" srcset="images/index/map/map-mobile@1x.webp 1x, images/index/map/map-mobile@2x.webp 2x">
+          <source type="image/webp"
+            srcset="images/index/map/map-mobile@1x.webp 1x, images/index/map/map-mobile@2x.webp 2x">
           <source media="(min-width: 1440px)"
             srcset="images/index/map-desktop@1x.jpg 1x, images/index/map/map-desktop@2x.jpg 2x">
           <source media="(min-width: 768px)"
