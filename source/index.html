@@ -234,13 +234,13 @@
           <h2 class="catalog__title">Каталог кофейных напитков</h2>
         </div>
         <div class="catalog__filter filter">
-          <form class="filter__form">
+          <form class="filter__form" action="https://echo.htmlacademy.ru" method="get" aria-label="Фильтры">
             <div class="filter__wrapper">
               <div class="filter__price">
                 <span class="filter__text">Цена</span>
                 <span class="filter__range-bar">
-                  <span class="filter__range-strip" style="left: 0;
-                  right: 20px;">
+                  <span class="filter__range-strip" style="top: -2px; left: 2px;
+                  right: 22px;">
                     <span class="filter__range-mark filter__range-mark--left"></span>
                     <span class="filter__range-mark filter__range-mark--right"></span>
                   </span>
@@ -249,7 +249,7 @@
                   <label>
                     <span class="visually-hidden">Минимальная цена.</span>
                     <input class="filter__input-price filter__input-price--left" name="min-price" type="number"
-                      placeholder="0" min="0" max="1000">
+                      placeholder="0" value="0" min="0" max="1000">
                   </label>
                   <span class="filter__price-stroke"></span>
                   <label>
@@ -336,6 +336,7 @@
                 </ul>
               </div>
             </div>
+            <button class="filter__supmit-button button" type="submit">Применить</button>
             <button class="filter__reset-button button" type="reset">Сбросить фильтр</button>
           </form>
         </div>

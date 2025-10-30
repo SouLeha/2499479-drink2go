@@ -42,7 +42,7 @@
 
 .filter__text {
   display: block;
-  font-weight: 700;
+  font-weight: 600;
   font-size: 16px;
   line-height: 24px;
   color: #333333;
@@ -59,7 +59,7 @@
   width: 100%;
   height: 2px;
   background-color: #e2e2e2;
-  margin-bottom: 32px;
+  margin-bottom: 35px;
 }
 
 .filter__range-strip {
@@ -71,22 +71,22 @@
 
 .filter__range-mark {
   position: absolute;
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   border: 2px solid #9070ec;
   border-radius: 50%;
   background-color: #ffffff;
-  top: -10px;
+  top: -11px;
   cursor: pointer;
 
   &--left {
-    left: 0;
-    top: -8px;
+    left: -2px;
+    top: -11px;
   }
 
   &--right {
-    right: 0;
-    top: -8px;
+    right: -2px;
+    top: -11px;
   }
 
   &::before {
@@ -95,16 +95,19 @@
     width: 16px;
     height: 16px;
     border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* ИЗМЕНЕНО: добавлено центрирование */
   }
 
+  /* ИЗМЕНЕНО: заменен opacity на rgba для сохранения видимости бордера */
   &:hover::before {
-    background-color: #7859cf;
-    opacity: 0.25;
+    background-color: rgba(120, 89, 207, 0.25);
   }
 
+  /* ИЗМЕНЕНО: заменен opacity на rgba для сохранения видимости бордера */
   &:focus::before {
-    background-color: #7859cf;
-    opacity: 0.25;
+    background-color: rgba(120, 89, 207, 0.25);
   }
 
   &:active::before {
@@ -117,7 +120,7 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  margin-bottom: 25px;
+  margin-bottom: 30px;
 
   @media (min-width: $desktop-width) {
     margin-bottom: 32px;
@@ -126,7 +129,7 @@
 
 .filter__input-price {
   box-sizing: border-box;
-  width: 125px;
+  width: 118px;
   height: 40px;
   font-weight: 500;
   font-size: 16px;
@@ -138,6 +141,12 @@
   padding: 8px 10px;
   text-align: center;
   appearance: none;
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
 
   &:active {
     border-color: #593cac;
@@ -162,10 +171,10 @@
 
 .filter__price-stroke {
   display: block;
-  width: 10px;
+  width: 8px;
   height: 2px;
   background-color: #bdbdbd;
-  margin: 0 10px;
+  margin: 0 18px;
 
   @media (min-width: $desktop-width) {
     margin: 0 20px;
@@ -173,11 +182,11 @@
 }
 
 .filter__milk {
-  padding-bottom: 4px;
+  padding: 0;
 
   @media (min-width: $tablet-width) {
     margin-left: -10px;
-    padding: 0;
+    
   }
 
   @media (min-width: $desktop-width) {
@@ -193,6 +202,7 @@
   line-height: 24px;
   color: #333333;
   margin: 0;
+  margin-bottom: 30px;
   padding: 0 0 0 34px;
 }
 
@@ -200,7 +210,7 @@
   padding: 0 0 0 52px;
 }
 
-.filter__milk-item,
+.filter__milk-item:not(:last-child),
 .filter__country-item {
   position: relative;
   margin-bottom: 20px;
@@ -210,15 +220,15 @@
   display: block;
   position: absolute;
   left: -34px;
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   background-color: #ffffff;
   border: 2px solid #bdbdbd;
   border-radius: 50%;
   cursor: pointer;
 }
 
-.filter__input-milk:checked+.filter__mark-circle {
+.filter__input-milk:checked + .filter__mark-circle {
   border-color: #7859cf;
 
   &::before {
@@ -228,10 +238,14 @@
     height: 16px;
     background-color: #7859cf;
     border-radius: 50px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* ИЗМЕНЕНО: добавлено центрирование */
   }
 }
 
-.filter__input-milk:hover+.filter__mark-circle {
+/* ИЗМЕНЕНО: заменен opacity на rgba для сохранения видимости бордера */
+.filter__input-milk:hover + .filter__mark-circle {
   border-color: #9070ec;
 
   &::before {
@@ -239,17 +253,19 @@
     position: absolute;
     width: 16px;
     height: 16px;
-    background-color: #7859cf;
-    opacity: 0.25;
+    background-color: rgba(120, 89, 207, 0.25);
     border-radius: 50px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* ИЗМЕНЕНО: добавлено центрирование */
   }
 }
 
-.filter__input-milk:disabled~.filter__mark-circle {
+.filter__input-milk:disabled ~ .filter__mark-circle {
   opacity: 0.3;
 }
 
-.filter__input-milk:disabled~.filter__milk-label {
+.filter__input-milk:disabled ~ .filter__milk-label {
   opacity: 0.3;
 }
 
@@ -283,7 +299,7 @@
   }
 }
 
-.filter__input-country:checked+.filter__mark-toogle {
+.filter__input-country:checked + .filter__mark-toogle {
   background-color: #7859cf;
 
   &::before {
@@ -291,26 +307,32 @@
   }
 }
 
-.filter__input-country:hover+.filter__mark-toogle {
+/* ИЗМЕНЕНО: заменен opacity на rgba для сохранения видимости бордера */
+.filter__input-country:hover + .filter__mark-toogle {
   box-sizing: border-box;
-  background-color: #7859cf;
-  opacity: 0.25;
+  background-color: rgba(120, 89, 207, 0.25);
   border: 2px solid #9070ec;
 
   &::before {
     top: 0;
     left: 0;
+    background-color: rgba(255, 255, 255, 0.8); /* ИЗМЕНЕНО: добавлена прозрачность для кружка */
   }
 }
 
-.filter__input-country:checked:hover+.filter__mark-toogle {
+/* ИЗМЕНЕНО: заменен opacity на rgba для сохранения видимости бордера */
+.filter__input-country:checked:hover + .filter__mark-toogle {
+  background-color: rgba(120, 89, 207, 0.25);
+  border: 2px solid #9070ec;
+
   &::before {
     top: 0;
     left: 18px;
+    background-color: rgba(255, 255, 255, 0.8); /* ИЗМЕНЕНО: добавлена прозрачность для кружка */
   }
 }
 
-.filter__input-country:disabled+.filter__mark-toogle {
+.filter__input-country:disabled + .filter__mark-toogle {
   opacity: 0.3;
 
   &::before {
@@ -318,8 +340,47 @@
   }
 }
 
-.filter__input-country:disabled~.filter__country-label {
+.filter__input-country:disabled ~ .filter__country-label {
   opacity: 0.3;
+}
+
+.filter__supmit-button {
+  display: block;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #ffffff;
+  background-color: #7859cf;
+  border: none;
+  border-radius: 4px;
+  margin: 0 auto;
+  padding: 8px 91px;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    background-color: #9070ec;
+  }
+
+  &:active {
+    background-color: #593cac;
+  }
+
+  &:disabled {
+    background-color: #bdbdbd;
+    cursor: default;
+  }
+
+  @media (min-width: $tablet-width) {
+    width: 222px;
+    padding: 8px 30px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 318px;
+    padding: 8px 30px;
+    margin: 0;
+  }
 }
 
 .filter__reset-button {
@@ -336,19 +397,24 @@
   cursor: pointer;
 
   &:hover {
+    background-color: #9070ec;
     color: #ffffff;
   }
 
   &:focus {
+    background-color: #9070ec;
     color: #ffffff;
   }
 
   &:active {
+    background-color: #593cac;
     color: #ffffff;
   }
 
   &:disabled {
+    background-color: #e2e2e2;
     color: #ffffff;
+    cursor: default;
   }
 
   @media (min-width: $tablet-width) {
