@@ -49,7 +49,7 @@
             </a>
           </li>
           <li class="main-nav__item">
-            <a class="main-nav__link" href="#">
+            <a class="main-nav__link" href="select-test.html">
               Доставка
             </a>
           </li>
@@ -249,7 +249,7 @@
                   <label>
                     <span class="visually-hidden">Минимальная цена.</span>
                     <input class="filter__input-price filter__input-price--left" name="min-price" type="number"
-                      placeholder="0" value="0" min="0" max="1000">
+                      placeholder="0" min="0" max="1000">
                   </label>
                   <span class="filter__price-stroke"></span>
                   <label>
@@ -286,7 +286,7 @@
                     </label>
                   </li>
                   <li class="filter__milk-item">
-                    <label>
+                    <label tabindex="-1">
                       <input class="visually-hidden filter__input-milk" type="radio" name="milk-type"
                         value="without_milk" disabled>
                       <span class="filter__mark-circle"></span>
@@ -327,7 +327,7 @@
                     </label>
                   </li>
                   <li class="filter__country-item">
-                    <label>
+                    <label tabindex="-1">
                       <input class="visually-hidden filter__input-country" type="checkbox" name="Peru" disabled>
                       <span class="filter__mark-toogle"></span>
                       <span class="filter__country-label">Перу</span>
@@ -336,21 +336,24 @@
                 </ul>
               </div>
             </div>
-            <button class="filter__supmit-button button" type="submit">Применить</button>
-            <button class="filter__reset-button button" type="reset">Сбросить фильтр</button>
+            <button class="filter__submit-button button" type="submit">Применить</button>
+            <button class="filter__reset-button button" type="reset">Сбросить</button>
           </form>
         </div>
         <div class="catalog__cards cards">
           <div class="cards__sorting-wrapper">
             <form class="cards__sorting-form">
-              <label class="cards__sorting-label">
+              <label class="cards__sorting-label" tabindex="0">
                 <span class="cards__sorting-text">Сортировка:</span>
-                <select class="cards__select" name="sorting" id="sorting">
+                <div class="cards__select-wrapper">
+                  <select class="cards__select" name="sorting" id="sorting">
                   <option class="cards__option" value="default">по умолчанию</option>
                   <option class="cards__option" value="expensive">сначала дорогие</option>
                   <option class="cards__option" value="cheap">сначала дешёвые</option>
                   <option class="cards__option" value="popular">высокий рейтинг</option>
                 </select>
+                </div>
+                
               </label>
             </form>
           </div>

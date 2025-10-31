@@ -7,3 +7,17 @@ $primary-font: "Montserrat", "Arial", sans-serif;
 $tablet-width: 768px;
 $desktop-width: 1440px;
 $mobile-width-only: 767px;
+
+// Стрелочка на CSS
+
+.arrow {
+  width: 60px;
+  height: 60px;
+  border-top: 10px solid #7859cf;
+  border-right: 10px solid #7859cf;
+
+}
+
+.arrow-bottom {
+  transform: rotate(135deg);
+}

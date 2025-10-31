@@ -30,6 +30,7 @@
   }
 }
 
+/* ===== БЛОК ЦЕНЫ ===== */
 .filter__price {
   @media (min-width: $tablet-width) {
     width: 223px;
@@ -53,6 +54,7 @@
   }
 }
 
+/* ===== ПОЛЗУНОК ДИАПАЗОНА ЦЕН ===== */
 .filter__range-bar {
   display: block;
   position: relative;
@@ -97,15 +99,13 @@
     border-radius: 50%;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); /* ИЗМЕНЕНО: добавлено центрирование */
+    transform: translate(-50%, -50%);
   }
 
-  /* ИЗМЕНЕНО: заменен opacity на rgba для сохранения видимости бордера */
   &:hover::before {
     background-color: rgba(120, 89, 207, 0.25);
   }
 
-  /* ИЗМЕНЕНО: заменен opacity на rgba для сохранения видимости бордера */
   &:focus::before {
     background-color: rgba(120, 89, 207, 0.25);
   }
@@ -115,6 +115,7 @@
   }
 }
 
+/* ===== ИНПУТЫ ЦЕНЫ ===== */
 .filter__input-wrapper {
   max-width: 100%;
   display: flex;
@@ -128,6 +129,7 @@
 }
 
 .filter__input-price {
+  font-family: $primary-font;
   box-sizing: border-box;
   width: 118px;
   height: 40px;
@@ -149,11 +151,12 @@
   }
 
   &:active {
-    border-color: #593cac;
+    border-color: #9070ec;
   }
 
   &:focus {
     border-color: #593cac;
+    outline: none;
   }
 
   &::placeholder {
@@ -181,12 +184,12 @@
   }
 }
 
+/* ===== БЛОК ТИПА МОЛОКА ===== */
 .filter__milk {
   padding: 0;
 
   @media (min-width: $tablet-width) {
     margin-left: -10px;
-    
   }
 
   @media (min-width: $desktop-width) {
@@ -206,16 +209,17 @@
   padding: 0 0 0 34px;
 }
 
-.filter__country-list {
-  padding: 0 0 0 52px;
-}
-
-.filter__milk-item:not(:last-child),
+.filter__milk-item,
 .filter__country-item {
   position: relative;
   margin-bottom: 20px;
 }
 
+.filter__milk-item:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+/* ===== КАСТОМНЫЕ РАДИОКНОПКИ (МОЛОКО) ===== */
 .filter__mark-circle {
   display: block;
   position: absolute;
@@ -228,7 +232,8 @@
   cursor: pointer;
 }
 
-.filter__input-milk:checked + .filter__mark-circle {
+/* Активное состояние радиокнопки */
+.filter__input-milk:checked+.filter__mark-circle {
   border-color: #7859cf;
 
   &::before {
@@ -240,12 +245,12 @@
     border-radius: 50px;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); /* ИЗМЕНЕНО: добавлено центрирование */
+    transform: translate(-50%, -50%);
   }
 }
 
-/* ИЗМЕНЕНО: заменен opacity на rgba для сохранения видимости бордера */
-.filter__input-milk:hover + .filter__mark-circle {
+/* Hover состояние радиокнопки */
+.filter__input-milk:hover+.filter__mark-circle {
   border-color: #9070ec;
 
   &::before {
@@ -257,26 +262,80 @@
     border-radius: 50px;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); /* ИЗМЕНЕНО: добавлено центрирование */
+    transform: translate(-50%, -50%);
   }
 }
 
-.filter__input-milk:disabled ~ .filter__mark-circle {
+/* ===== DISABLED СОСТОЯНИЕ РАДИОКНОПОК (Без молока) ===== */
+
+.filter__input-milk:disabled+.filter__mark-circle {
   opacity: 0.3;
+  cursor: default;
+  border-color: #bdbdbd;
+
+  &::before {
+    content: none;
+  }
 }
 
-.filter__input-milk:disabled ~ .filter__milk-label {
+/* DISABLED СОСТОЯНИЕ С ВЫБРАННЫМ КРУЖКОМ (Без молока) */
+.filter__input-milk:disabled:checked+.filter__mark-circle {
   opacity: 0.3;
+  cursor: default;
+  border-color: #7859cf;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background-color: #7859cf;
+    border-radius: 50px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.3;
+  }
 }
 
+.filter__input-milk:disabled~.filter__milk-label {
+  opacity: 0.3;
+  cursor: default;
+  pointer-events: none;
+
+}
+
+/* Отключаем focus для disabled элементов */
+.filter__input-milk:disabled:focus+.filter__mark-circle {
+  outline: none;
+}
+
+.filter__input-milk:disabled:hover+.filter__mark-circle,
+.filter__input-milk:disabled:focus+.filter__mark-circle,
+.filter__input-milk:disabled:active+.filter__mark-circle {
+  border-color: #bdbdbd;
+
+  &::before {
+    content: none;
+  }
+}
+
+.filter__input-milk:disabled:checked:hover+.filter__mark-circle,
+.filter__input-milk:disabled:checked:focus+.filter__mark-circle,
+.filter__input-milk:disabled:checked:active+.filter__mark-circle {
+  border-color: #7859cf;
+}
+
+/* ===== БЛОК СТРАНЫ ПРОИЗРАСТАНИЯ ===== */
 .filter__country {
-  padding-bottom: 10px;
-
-  @media (min-width: $tablet-width) {
-    padding: 0;
-  }
+padding: 0;
 }
 
+.filter__country-list {
+  padding: 0 0 0 52px;
+}
+
+/* ===== КАСТОМНЫЕ ПЕРЕКЛЮЧАТЕЛИ (СТРАНЫ) ===== */
 .filter__mark-toogle {
   display: block;
   position: absolute;
@@ -292,14 +351,15 @@
     position: absolute;
     width: 20px;
     height: 20px;
-    top: 2px;
+    top: 8%;
     left: 2px;
     background-color: #ffffff;
     border-radius: 50px;
   }
 }
 
-.filter__input-country:checked + .filter__mark-toogle {
+/* Активное состояние переключателя */
+.filter__input-country:checked+.filter__mark-toogle {
   background-color: #7859cf;
 
   &::before {
@@ -307,8 +367,8 @@
   }
 }
 
-/* ИЗМЕНЕНО: заменен opacity на rgba для сохранения видимости бордера */
-.filter__input-country:hover + .filter__mark-toogle {
+/* Hover состояние переключателя */
+.filter__input-country:hover+.filter__mark-toogle {
   box-sizing: border-box;
   background-color: rgba(120, 89, 207, 0.25);
   border: 2px solid #9070ec;
@@ -316,35 +376,86 @@
   &::before {
     top: 0;
     left: 0;
-    background-color: rgba(255, 255, 255, 0.8); /* ИЗМЕНЕНО: добавлена прозрачность для кружка */
+    background-color: #ffffff;
   }
 }
 
-/* ИЗМЕНЕНО: заменен opacity на rgba для сохранения видимости бордера */
-.filter__input-country:checked:hover + .filter__mark-toogle {
+.filter__input-country:checked:hover+.filter__mark-toogle {
   background-color: rgba(120, 89, 207, 0.25);
   border: 2px solid #9070ec;
 
   &::before {
     top: 0;
     left: 18px;
-    background-color: rgba(255, 255, 255, 0.8); /* ИЗМЕНЕНО: добавлена прозрачность для кружка */
+    background-color: #ffffff;
   }
 }
 
-.filter__input-country:disabled + .filter__mark-toogle {
+/* ===== DISABLED СОСТОЯНИЕ ПЕРЕКЛЮЧАТЕЛЕЙ (Перу) ===== */
+
+
+.filter__input-country:disabled+.filter__mark-toogle {
+  opacity: 0.3;
+  cursor: default;
+  background-color: #bdbdbd;
+  border: none;
+
+  &::before {
+    background-color: #f8f8f8;
+  }
+}
+
+.filter__input-country:checked:disabled+.filter__mark-toogle {
+  background-color: #7859cf;
   opacity: 0.3;
 
   &::before {
+    left: 20px;
     background-color: #333333;
   }
 }
 
-.filter__input-country:disabled ~ .filter__country-label {
+.filter__input-country:disabled~.filter__country-label {
   opacity: 0.3;
+  cursor: default;
+  pointer-events: none;
+
 }
 
-.filter__supmit-button {
+.filter__input-country:disabled:focus+.filter__mark-toogle {
+  outline: none;
+}
+
+/* Для выключенного disabled состояния */
+.filter__input-country:disabled:not(:checked):hover+.filter__mark-toogle,
+.filter__input-country:disabled:not(:checked):focus+.filter__mark-toogle,
+.filter__input-country:disabled:not(:checked):active+.filter__mark-toogle {
+  background-color: #bdbdbd;
+  border: none;
+
+  &::before {
+    background-color: #f8f8f8;
+    top: 2px;
+    left: 2px;
+  }
+}
+
+/* Для включенного disabled состояния */
+.filter__input-country:checked:disabled:hover+.filter__mark-toogle,
+.filter__input-country:checked:disabled:focus+.filter__mark-toogle,
+.filter__input-country:checked:disabled:active+.filter__mark-toogle {
+  background-color: #7859cf;
+  border: none;
+
+  &::before {
+    top: 2px;
+    left: 20px;
+    background-color: #333333;
+  }
+}
+
+/* ===== КНОПКИ ФОРМЫ ===== */
+.filter__submit-button {
   display: block;
   font-weight: 400;
   font-size: 16px;
@@ -356,9 +467,10 @@
   margin: 0 auto;
   padding: 8px 91px;
   cursor: pointer;
+  margin-bottom: 20px;
 
-  &:hover,
-  &:focus {
+  &:focus,
+  &:hover {
     background-color: #9070ec;
   }
 
@@ -393,7 +505,7 @@
   border: none;
   border-radius: 4px;
   margin: 0 auto;
-  padding: 8px 67px;
+  padding: 8px 100px;
   cursor: pointer;
 
   &:hover {
