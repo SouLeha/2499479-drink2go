@@ -43,21 +43,35 @@
 }
 
 .footer__navigation {
+  position: relative;
+  width: 100%;
+
+  // Убираем бордер у последнего элемента, если их несколько
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    border-top: 1px solid #f0ebff;
+    pointer-events: none;
+  }
+
   @media (min-width: $desktop-width) {
     position: relative;
     grid-column: span 3;
     padding-top: 50px;
-
   }
 }
 
 .footer-navigation__item {
   @media (max-width: $mobile-width-only) {
-    padding: 20px 0;
+    padding: 20px 0 10px;
     width: 100%;
     position: relative;
 
-  
     &::after {
       content: "";
       position: absolute;
@@ -69,6 +83,47 @@
       pointer-events: none;
     }
   }
+}
+
+.footer-navigation__title {
+  margin: 0;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+  color: #7859cf;
+  letter-spacing: 0.02em;
+  padding-bottom: 20px;
+}
+
+.footer-navigation-list__item {
+  margin: 0;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+  color: #333333;
+  padding-bottom: 20px;
+}
+
+.footer-navigation__contacts-list {
+  font-weight: 400;
+  padding-left: 19px;
+}
+
+.footer-navigation__item-address {
+  padding: 0;
+}
+
+.footer-navigation__address {
+  margin: 0;
+  padding: 0;
+}
+
+.footer-navigation__item-phone {
+  padding: 0;
+  padding-top: 16px;
+  padding-bottom: 10px;
 }
 
 .footer__copyright {
