@@ -16,7 +16,10 @@ img {
 }
 
 a {
-  text-decoration: none;
+    all: unset;
+    cursor: pointer;
+    color: inherit;
+    text-decoration: none;
 }
 
 ul {
