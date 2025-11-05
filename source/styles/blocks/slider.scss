@@ -1,5 +1,7 @@
 .slider {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.01);
+  position: relative;
+
   @media (min-width: $tablet-width) {
     overflow-y: visible;
   }
@@ -44,16 +46,31 @@
   }
 }
 
+/* Скрываем ТОЛЬКО стандартные стрелки Swiper */
+.swiper-button-next:not(.slider__button),
+.swiper-button-prev:not(.slider__button) {
+  display: none;
+}
+
+/* Стили для КАСТОМНЫХ кнопок слайдера */
 .slider__button {
+  position: absolute;
+  z-index: 10;
   height: 100%;
-  top: 0;
+  top: 50%;
   margin: 0;
   width: 20px;
+  background: none;
+  border: none;
+  transform: translateY(-50%);
+  cursor: pointer;
+  display: block !important;
 
   @media (min-width: $tablet-width) {
     width: 80px;
   }
 
+  /* ИКОНКА СТРЕЛКИ */
   &::after {
     content: "";
     position: absolute;
@@ -66,8 +83,12 @@
     background-repeat: no-repeat;
     background-position: center center;
     mask-image: url("../../icons/arrow-slider.svg");
+    mask-repeat: no-repeat;
+    mask-position: center;
+    font-size: 0;
   }
 
+  /* КНОПКА "НАЗАД" */
   &--prev {
     left: 0;
 
@@ -75,6 +96,7 @@
       left: calc((100% - $desktop-width) / 2);
     }
 
+    /* ГРАДИЕНТ ПРИ ХОВЕРЕ */
     &:hover,
     &:focus {
       background: linear-gradient(90deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
@@ -85,17 +107,22 @@
     }
   }
 
+  /* КНОПКА "ВПЕРЕД" */
   &--next {
     right: 0;
+    left: auto;
 
     @media (min-width: $desktop-width) {
       right: calc((100% - $desktop-width) / 2);
+      left: auto;
     }
 
+    /* Поворачиваем стрелку */
     &::after {
-      transform: rotate(180deg);
+      transform: translate(-50%, -50%) rotate(180deg);
     }
 
+    /* ГРАДИЕНТ ПРИ ХОВЕРЕ */
     &:hover,
     &:focus {
       background: linear-gradient(270deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
@@ -106,9 +133,127 @@
     }
   }
 
-  &:disabled {
+  /* Заблокированные кнопки */
+  &.swiper-button-disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+
     &::after {
       background-color: #bdbdbd;
     }
+
+    &:hover {
+      background: none;
+    }
+  }
+}
+
+/* Убираем фокус-стили */
+.swiper-button-next:focus,
+.swiper-button-prev:focus,
+.swiper-pagination-bullet:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/* СТИЛИ ДЛЯ БЭКГРАУНДА С ОГРАНИЧЕНИЕМ ВЫСОТЫ И РАЗНЫМИ ЦВЕТАМИ */
+.swiper-slide {
+  position: relative;
+  text-align: center;
+
+  /* Основной бэкграунд с ограничением высоты */
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%; /* Полная высота по умолчанию для мобильных */
+    z-index: -1;
+
+    /* Ограничение высоты 640px для планшетной версии */
+    @media (min-width: $tablet-width) {
+      height: 640px;
+    }
+
+    /* Для десктопа можно вернуть полную высоту */
+    @media (min-width: $desktop-width) {
+      height: 100%;
+    }
+  }
+
+  /* Градиентный оверлей при ховере */
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(0,0,0,0.1) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  /* КЛАССЫ ЦВЕТОВ ДЛЯ РАЗНЫХ СЛАЙДОВ */
+  &.slide--beige::before {
+    background-color: #f3ebe1;
+  }
+
+  &.slide--violet::before {
+    background-color: #eae6fc;
+  }
+
+  &.slide--gray::before {
+    background-color: #e5e6e8;
+  }
+}
+
+.swiper-slide:hover::after {
+  opacity: 1;
+}
+
+/* РЕШЕНИЕ ПРОБЛЕМЫ РАЗНОЙ ВЫСОТЫ СЛАЙДОВ */
+.swiper-wrapper {
+  display: flex;
+  align-items: stretch;
+}
+
+.swiper-slide {
+  height: auto;
+  display: flex;
+}
+
+/* Высота слайдера */
+.slider.swiper {
+  height: 656px;
+}
+
+@media (min-width: $tablet-width) {
+  .slider.swiper {
+    height: 828px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .slider.swiper {
+    height: 714px;
+  }
+}
+
+/* Дополнительные стили для контента поверх бэкграунда */
+.slide-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+
+  @media (min-width: $tablet-width) {
+    padding: 40px;
   }
 }

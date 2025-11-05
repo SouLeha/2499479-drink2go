@@ -9,9 +9,6 @@
 
   @media (min-width: $desktop-width) {
     width: calc(100% - 80px);
-  }
-
-  @media (min-width: $desktop-width) {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     column-gap: 30px;
@@ -22,7 +19,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 0 20px;
+  padding: 20px 0;
 
   @media (min-width: $tablet-width) {
     padding: 40px 0 30px;
@@ -42,21 +39,26 @@
   }
 }
 
-.footer__navigation {
-  position: relative;
-  width: 100%;
-
-  // Убираем бордер у последнего элемента, если их несколько
-
+// Общие стили для разделительных линий
+.footer__navigation,
+.footer-navigation__item {
   &::after {
     content: "";
     position: absolute;
-    top: 0;
     left: 50%;
     transform: translateX(-50%);
     width: 100vw;
     border-top: 1px solid #f0ebff;
     pointer-events: none;
+  }
+}
+
+.footer__navigation {
+  position: relative;
+  width: 100%;
+
+  &::after {
+    top: 0;
   }
 
   @media (min-width: $desktop-width) {
@@ -73,14 +75,7 @@
     position: relative;
 
     &::after {
-      content: "";
-      position: absolute;
       bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 100vw;
-      border-top: 1px solid #f0ebff;
-      pointer-events: none;
     }
   }
 }
@@ -108,42 +103,24 @@
 
 .footer-navigation__contacts-list {
   font-weight: 400;
-
 }
 
-.footer-navigation__item-address {
-  position: relative;
-  padding: 0;
-}
-
-.footer-navigation__address {
-  margin: 0;
-  padding: 0;
-  padding-left: 19px;
-
-  &::after {
-    position: absolute;
-    content: "";
-    width: 16px;
-    height: 16px;
-    top: 0;
-    left: -2px;
-    background-color: #7859cf;
-    background-repeat: no-repeat;
-    background-position: center center;
-    mask-image: url("../../icons/icon-address.svg");
-    background-size: 16px 16px;
-  }
-}
-
+// Общие стили для контактных элементов
+.footer-navigation__item-address,
 .footer-navigation__item-phone {
   position: relative;
   padding: 0;
+}
+
+.footer-navigation__item-phone {
   padding-top: 16px;
   padding-bottom: 10px;
 }
 
+// Общие стили для иконок
+.footer-navigation__address,
 .footer-navigation__link-phone {
+  margin: 0;
   padding-left: 19px;
 
   &::after {
@@ -151,21 +128,29 @@
     content: "";
     width: 16px;
     height: 16px;
-    top: 50%;
-    left: -2px;
-    transform: translateY(-50%);
     background-color: #7859cf;
     background-repeat: no-repeat;
     background-position: center center;
-    mask-image: url("../../icons/icon-phone.svg");
     background-size: 16px 16px;
   }
 }
 
+.footer-navigation__address::after {
+  top: 0;
+  left: -2px;
+  mask-image: url("../../icons/icon-address.svg");
+}
+
+.footer-navigation__link-phone::after {
+  top: 50%;
+  left: -2px;
+  transform: translateY(-50%);
+  mask-image: url("../../icons/icon-phone.svg");
+}
+
 .footer__copyright {
   position: relative;
-  padding: 20px 0 30px;
-  padding-left: 37px;
+  padding: 20px 0 30px 37px;
   font-weight: 400;
   font-size: 12px;
   line-height: 16px;
@@ -173,7 +158,7 @@
   color: #bdbdbd;
 
   @media (min-width: $tablet-width) {
-    padding: 30px 0 40px;
+    padding: 30px 0 40px 37px;
   }
 
   @media (min-width: $desktop-width) {

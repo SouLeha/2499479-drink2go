@@ -1,18 +1,22 @@
-const swiper = new Swiper('.swiper', {
+const swiper = new Swiper('.promo__slider', { // Используем ваш класс
+  // Базовые параметры
   direction: 'horizontal',
   loop: false,
-  speed: 300,
+  slidesPerView: 1,
+  spaceBetween: 0,
+  speed: 500,
 
-  touchRatio: 1,
-  touchAngle: 45,
-  grabCursor: true,
-
+  // Пагинация
   pagination: {
     el: '.swiper-pagination',
-    clickable: true,
+    clickable: true, // Добавляем возможность кликать на пагинацию
   },
+
+  // Навигация
   navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
+    nextEl: '.slider__button--next',
+    prevEl: '.slider__button--prev',
   },
 });
+
+export { swiper };

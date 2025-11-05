@@ -13,9 +13,8 @@
   <link rel="preload" href="/source/fonts/montserrat-500.woff2" type="font/woff2" as="font" crossorigin="anonymous">
   <link rel="preload" href="/source/fonts/montserrat-600.woff2" type="font/woff2" as="font" crossorigin="anonymous">
   <link rel="preload" href="/source/fonts/montserrat-700.woff2" type="font/woff2" as="font" crossorigin="anonymous">
-  <link rel="preload" href="vendor/swiper/swiper-bundle.min.css" as="style">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
   <link rel="preload" href="styles/styles.css" as="style">
-  <link rel="stylesheet" href="vendor/swiper/swiper-bundle.min.css">
   <link rel="stylesheet" href="styles/styles.css">
   <script src="scripts/index.js" defer></script>
 </head>
@@ -198,8 +197,8 @@
             </div>
           </div>
           <div class="slider__pagination swiper-pagination"></div>
-          <div class="slider__button slider__button--prev swiper-button-prev"></div>
-          <div class="slider__button slider__button--next swiper-button-next"></div>
+          <div class="slider__button slider__button--prev"></div>
+          <div class="slider__button slider__button--next"></div>
         </div>
       </div>
     </section>
@@ -347,11 +346,11 @@
                 <span class="cards__sorting-text">Сортировка:</span>
                 <div class="cards__select-wrapper">
                   <select class="cards__select" name="sorting" id="sorting">
-                  <option class="cards__option" value="default">по умолчанию</option>
-                  <option class="cards__option" value="expensive">сначала дорогие</option>
-                  <option class="cards__option" value="cheap">сначала дешёвые</option>
-                  <option class="cards__option" value="popular">высокий рейтинг</option>
-                </select>
+                    <option class="cards__option" value="default">по умолчанию</option>
+                    <option class="cards__option" value="expensive">сначала дорогие</option>
+                    <option class="cards__option" value="cheap">сначала дешёвые</option>
+                    <option class="cards__option" value="popular">высокий рейтинг</option>
+                  </select>
                 </div>
 
               </label>
@@ -409,8 +408,10 @@
             <li class="cards__item">
               <a class="cards__link" href="#">
                 <picture>
-                  <source type="image/webp" srcset="images/catalog/image-card4@1x.webp, images/catalog/image-card4@2x.webp 2x">
-                  <img class="cards__image" src="images/catalog/image-card4@1x.png" srcset="images/catalog/image-card4@2x.png 2x" width="130" height="188" alt="Декаф Флэт Уайт">
+                  <source type="image/webp"
+                    srcset="images/catalog/image-card4@1x.webp, images/catalog/image-card4@2x.webp 2x">
+                  <img class="cards__image" src="images/catalog/image-card4@1x.png"
+                    srcset="images/catalog/image-card4@2x.png 2x" width="130" height="188" alt="Декаф Флэт Уайт">
                 </picture>
                 <h3 class="cards__title">Декаф Флэт Уайт</h3>
                 <p class="cards__description">Кофе без кофеина из Эфиопии<br> с натуральным фермерским молоком</p>
@@ -423,8 +424,10 @@
             <li class="cards__item">
               <a class="cards__link" href="#">
                 <picture>
-                  <source type="image/webp" srcset="images/catalog/image-card5@1x.webp, images/catalog/image-card5@2x.webp 2x">
-                  <img class="cards__image" src="images/catalog/image-card5@1x.png" srcset="images/catalog/image-card5@2x.png 2x" width="130" height="188" alt="Декаф Флэт Уайт">
+                  <source type="image/webp"
+                    srcset="images/catalog/image-card5@1x.webp, images/catalog/image-card5@2x.webp 2x">
+                  <img class="cards__image" src="images/catalog/image-card5@1x.png"
+                    srcset="images/catalog/image-card5@2x.png 2x" width="130" height="188" alt="Декаф Флэт Уайт">
                 </picture>
                 <h3 class="cards__title">Декаф Флэт Уайт</h3>
                 <p class="cards__description">Кофе без кофеина из Эфиопии<br> с натуральным фермерским молоком</p>
@@ -437,8 +440,10 @@
             <li class="cards__item">
               <a class="cards__link" href="#">
                 <picture>
-                  <source type="image/webp" srcset="images/catalog/image-card6@1x.webp, images/catalog/image-card6@2x.webp 2x">
-                  <img class="cards__image" src="images/catalog/image-card6@1x.png" srcset="images/catalog/image-card6@2x.png 2x" width="130" height="188" alt="Декаф Флэт Уайт">
+                  <source type="image/webp"
+                    srcset="images/catalog/image-card6@1x.webp, images/catalog/image-card6@2x.webp 2x">
+                  <img class="cards__image" src="images/catalog/image-card6@1x.png"
+                    srcset="images/catalog/image-card6@2x.png 2x" width="130" height="188" alt="Декаф Флэт Уайт">
                 </picture>
                 <h3 class="cards__title">Декаф Флэт Уайт</h3>
                 <p class="cards__description">Кофе без кофеина из Эфиопии<br> с натуральным фермерским молоком</p>
@@ -570,11 +575,12 @@
         </li>
       </ul>
       <div class="footer__copyright">
-        <a class="footer__copyright-link" href="https://htmlacademy.ru/intensive/adaptive">Разработано в <span>HTML Academy</span></a>
+        <a class="footer__copyright-link" href="https://htmlacademy.ru/intensive/adaptive">Разработано в <span>HTML
+            Academy</span></a>
       </div>
     </div>
   </footer>
-  <script src="vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
   <script src="js/index.js" type="module"></script>
 </body>
 
