@@ -99,11 +99,19 @@
     /* ГРАДИЕНТ ПРИ ХОВЕРЕ */
     &:hover,
     &:focus {
-      background: linear-gradient(90deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+      background: linear-gradient(
+        90deg,
+        #ffffff 0%,
+        rgba(255, 255, 255, 0) 100%
+      );
     }
 
     &:active {
-      background: linear-gradient(90deg, rgba(120, 89, 207, 0.25) 0%, rgba(120, 89, 207, 0) 100%);
+      background: linear-gradient(
+        90deg,
+        rgba(120, 89, 207, 0.25) 0%,
+        rgba(120, 89, 207, 0) 100%
+      );
     }
   }
 
@@ -125,11 +133,19 @@
     /* ГРАДИЕНТ ПРИ ХОВЕРЕ */
     &:hover,
     &:focus {
-      background: linear-gradient(270deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+      background: linear-gradient(
+        270deg,
+        #ffffff 0%,
+        rgba(255, 255, 255, 0) 100%
+      );
     }
 
     &:active {
-      background: linear-gradient(270deg, rgba(120, 89, 207, 0.25) 0%, rgba(120, 89, 207, 0) 100%);
+      background: linear-gradient(
+        270deg,
+        rgba(120, 89, 207, 0.25) 0%,
+        rgba(120, 89, 207, 0) 100%
+      );
     }
   }
 
@@ -163,7 +179,7 @@
 
   /* Основной бэкграунд с ограничением высоты */
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -184,13 +200,17 @@
 
   /* Градиентный оверлей при ховере */
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(0,0,0,0.1) 100%);
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.1) 0%,
+      rgba(0, 0, 0, 0.1) 100%
+    );
     opacity: 0;
     transition: opacity 0.3s ease;
     z-index: 1;
