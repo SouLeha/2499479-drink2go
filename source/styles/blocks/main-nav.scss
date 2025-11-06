@@ -32,6 +32,10 @@
     text-transform: uppercase;
     margin: 0;
     padding: 0;
+    margin-right: 60px;
+  }
+
+  @media (min-width: $desktop-width) {
     margin-right: 162px;
   }
 }
